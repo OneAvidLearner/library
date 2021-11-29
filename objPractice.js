@@ -40,11 +40,12 @@ function displayBooks(){
     for (let i = 0; i < myLibrary.length; i++) {
     
         let div = document.createElement('div');
-        let bookName = document.createElement('p');
+        let bookName = document.createElement('h2');
         let author = document.createElement('p');
         let pages = document.createElement('p')
         let read = document.createElement('button');
         let deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete');
 
 
         div.classList.add('cards');
@@ -59,22 +60,18 @@ function displayBooks(){
             myLibrary[div.getAttribute('data-index')].read = !myLibrary[div.getAttribute('data-index')].read;
             read.textContent = readStatus(myLibrary[div.getAttribute('data-index')].read);
         })
-        display.addEventListener('click', function(e){
-            if(e.target.textContent == 'Delete'){
-                const parentOf = e.target.parentElement;
-                // if(parentOf){
-                    display.removeChild(parentOf);
+        deleteBtn.addEventListener('click', function(e){
+            const parentOf = e.target.parentElement;
+            display.removeChild(parentOf);
+            myLibrary.splice(div.getAttribute('data-index'),1);
+            updateAttributes();
 
-                // }
-                myLibrary.splice(div.getAttribute('data-index'),1);
-                updateAttributes();
-        }
         })
 
         display.appendChild(div);
 
     
-        bookName.textContent =`Title: ${myLibrary[i].title}`;
+        bookName.textContent =`${myLibrary[i].title}`;
         author.textContent = `Author: ${myLibrary[i].author}`;
         pages.textContent = `Pages: ${myLibrary[i].pages}`;
         read.textContent = readStatus(myLibrary[i].read)

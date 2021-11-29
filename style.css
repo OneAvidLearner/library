@@ -66,6 +66,7 @@ body{
     transform: translate(-50%, -50%) scale(1.25);
     box-shadow: 2px 2px 5p 5px rgba(0,0,0,0.15);
     border-radius: 10px;
+    border: 2px solid #E65100;
     padding: 0.5em;
     width: 380px;
     transition: top 0ms ease-in-out 200ms,
