@@ -1,7 +1,7 @@
 header{
     display: flex;
     background-color: #FF6F00;
-    font-size: 35px;
+    font-size: 50px;
     margin: none;
     border: none;
     color: #ffffff;
@@ -40,6 +40,7 @@ body{
     display: flex;
     background-color: #FFF3E0;
     border: 3px solid gray;
+    border-radius: 8px;
     width: 380px;
     flex-direction: column;
     padding: 10px;
