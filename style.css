@@ -1,0 +1,125 @@
+header{
+    display: flex;
+    background-color: #FF6F00;
+    font-size: 35px;
+    margin: none;
+    border: none;
+    color: #ffffff;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+body{
+    display: flex;
+    background-color: #FFD180;
+    flex-direction: column;
+    margin:0px;
+    padding:0px;
+    
+    
+}
+.add-book {
+    display: flex;
+    font-size: 18px;
+    color: blue;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 120px;
+    align-self: center;
+    justify-content: center;
+
+}
+.shelf{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cards {
+    display: flex;
+    background-color: #FFF3E0;
+    border: 3px solid gray;
+    width: 380px;
+    flex-direction: column;
+    padding: 10px;
+    margin: 3em;
+    justify-self: center;
+    text-align: center;
+}
+
+.cards button{
+    width: 120px;
+    padding: 8px;
+    margin: 0.5em;
+    font-size: 18px;
+    align-self: center;
+}
+.popup{
+    
+    background-color: #FFF3E0;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    box-shadow: 2px 2px 5p 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 380px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+    
+
+}
+.popup.active{
+    top: 50%;
+    opacity:1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+
+.popup .close{
+    position: absolute;
+    font-size: 14px;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background-color: #888;
+    color: #eee;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.form-container{
+    width: 400px;
+    max-width: 90%;
+    margin: 0 auto;
+
+}
+
+.form-container label{
+    display: block;
+    margin: 0.5em 0;
+
+}
+
+.form-container label input{
+    font-size: 18px;
+    padding: 0.5em;
+}
+
+#read{
+    font-size: 18px;
+}
+
+.form-container input[type='submit']{
+    font-size: 18px;
+    color: grey;
+}
+
+

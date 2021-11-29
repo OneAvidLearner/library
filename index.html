@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="objPractice.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <header>Library</header>
+    
+    <button  class="add-book">Add Book</button>
+    <div class="shelf"></div>
+    <div class="popup">
+        <div class="close">&times;</div>
+        <div class="form-container" onsubmit="event.preventDefault()">
+            <form id="add-book">
+
+                <label id="title">
+                    <input type="text" name="book-title" placeholder="Book Title" required>
+                </label>
+
+                <label id="name">
+                    <input type="text" name="author-name" placeholder="Author name" required>
+                </label>
+
+                <label id="pages">
+                    <input type="text" name="book-pages" placeholder="Pages" required>
+                </label>
+
+                <label id="read">
+                    <input type="checkbox" name="read">
+                    Have you read it?
+                </label>
+
+                <label id="submit">
+                    <input type="submit">
+                </label>
+
+            </form>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
