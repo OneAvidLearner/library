@@ -1,19 +1,14 @@
 let myLibrary = [];
 let number = 1;
 
-let tester = new Book('George R. R. Martin', 'A Game of Thrones', 694, 'on')
+let tester = new Book('George R. R. Martin', 'A Game of Thrones', 694, true)
  myLibrary[0] = tester
 
 function Book(author, title, pages, read){
     this.author = author;
     this.title = title;
     this.pages = pages;
-    if(read=='on'){
-        this.read = true;
-    }
-    else{
-        this.read = false;
-    } 
+    this.read = read;
 
 }
 
@@ -25,12 +20,11 @@ let addBookToLibrary= function(){
 
     let pages = this.querySelector('input[name="book-pages"]').value;
 
-    let read = this.querySelector('input[name="read"]').value;
+    let read = this.querySelector('input[name="read"]').checked;
     
     let newBook = new Book(author, title, pages, read);
 
     myLibrary.push(newBook);
-    console.log(myLibrary)
     closeForm();
     this.reset()
     displayBooks();
@@ -53,8 +47,6 @@ function displayBooks(){
         let deleteBtn = document.createElement('button');
 
 
-        console.log(bookName)
-
         div.classList.add('cards');
         deleteBtn.textContent = 'Delete';
         div.appendChild(bookName);
@@ -65,15 +57,12 @@ function displayBooks(){
         div.setAttribute('data-index', i);
         read.addEventListener('click', function(e){
             myLibrary[div.getAttribute('data-index')].read = !myLibrary[div.getAttribute('data-index')].read;
-            console.log (!myLibrary[div.getAttribute('data-index')].read);
             read.textContent = readStatus(myLibrary[div.getAttribute('data-index')].read);
         })
         display.addEventListener('click', function(e){
-            console.log(e.target.parentElement.getAttribute('data-index'));
             if(e.target.textContent == 'Delete'){
                 const parentOf = e.target.parentElement;
                 // if(parentOf){
-                    console.log(parentOf,display)
                     display.removeChild(parentOf);
 
                 // }
